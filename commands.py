@@ -721,17 +721,23 @@ async def serverinfo(ctx: commands.Context):
 async def cmds(ctx: commands.Context):
     embed = discord.Embed(
         title="Comandos de Dreams",
-        description="**Prefix:** `?`  •  **Slash:** `/`\nLos comandos con prefix no distinguen mayúsculas.",
+        description=(
+            "**Prefix:** `?` • **Slash:** `/`\n"
+            "Los comandos con prefix no distinguen mayúsculas."
+        ),
         color=COLOR_PRIMARY,
         timestamp=datetime.now(timezone.utc)
     )
 
     embed.add_field(
-        name="Slash Commands",
+        name="Slash",
         value=(
-            "`/welcome-setup` — Configurar bienvenidas\n"
-            "`/bot-setup` — Logs, roles staff/admin, mute\n"
-            "`/embed-create` — Crear embeds personalizados"
+            "`/welcome-setup`\n"
+            "Configurar bienvenidas\n\n"
+            "`/bot-setup`\n"
+            "Logs, staff, admin y mute\n\n"
+            "`/embed-create`\n"
+            "Crear embeds personalizados"
         ),
         inline=True
     )
@@ -739,14 +745,14 @@ async def cmds(ctx: commands.Context):
     embed.add_field(
         name="Moderación",
         value=(
-            "`?lock` `[canal]` — Bloquear canal\n"
-            "`?unlock` `[canal]` — Desbloquear canal\n"
-            "`?ban` `<user>` `[razón]` — Ban permanente\n"
-            "`?unban` `<id/nombre>` — Desbanear\n"
-            "`?tempban` `<user>` `<tiempo>` — Ban temporal\n"
-            "`?mute` `<user>` `[tiempo]` — Mutear\n"
-            "`?unmute` `<user>` — Desmutear\n"
-            "`?slowmode` `<seg>` `[canal]` — Slowmode"
+            "`?lock` `[canal]`\n"
+            "`?unlock` `[canal]`\n"
+            "`?ban` `<user>` `[razón]`\n"
+            "`?unban` `<id/nombre>`\n"
+            "`?tempban` `<user>` `<tiempo>`\n"
+            "`?mute` `<user>` `[tiempo]`\n"
+            "`?unmute` `<user>`\n"
+            "`?slowmode` `<seg>` `[canal]`"
         ),
         inline=True
     )
@@ -754,12 +760,12 @@ async def cmds(ctx: commands.Context):
     embed.add_field(
         name="Warns y Notas",
         value=(
-            "`?warn` `<user>` `[razón]` — Advertir\n"
-            "`?delwarn` `<user>` `[índice]` — Eliminar warn\n"
-            "`?warnings` `<user>` — Ver warns\n"
-            "`?noteadd` `<user>` `<texto>` — Añadir nota\n"
-            "`?noteremove` `<user>` `[índice]` — Eliminar nota\n"
-            "`?viewnotes` `<user>` — Ver notas"
+            "`?warn` `<user>` `[razón]`\n"
+            "`?delwarn` `<user>` `[n]`\n"
+            "`?warnings` `<user>`\n"
+            "`?noteadd` `<user>` `<texto>`\n"
+            "`?noteremove` `<user>` `[n]`\n"
+            "`?viewnotes` `<user>`"
         ),
         inline=True
     )
@@ -767,20 +773,20 @@ async def cmds(ctx: commands.Context):
     embed.add_field(
         name="Utilidad",
         value=(
-            "`?dm` `<user>` `<mensaje>` — Enviar DM\n"
-            "`?userinfo` `[user]` — Info de usuario\n"
-            "`?serverinfo` — Info del servidor\n"
-            "`?cmds` — Este panel"
+            "`?dm` `<user>` `<mensaje>`\n"
+            "`?userinfo` `[user]`\n"
+            "`?serverinfo`\n"
+            "`?cmds`"
         ),
         inline=True
     )
 
     embed.add_field(
-        name="Notas",
+        name="\u200b",
         value=(
-            "• Duraciones: `30s` `10m` `2h` `1d` `1w`\n"
-            "• Las notas son internas y **no** se notifican al usuario\n"
-            "• Warns, bans y mutes **sí** se notifican por DM"
+            "**Duraciones:** `30s` `10m` `2h` `1d` `1w`\n"
+            "Las notas son internas y no se notifican al usuario.\n"
+            "Warns, bans y mutes sí se notifican por DM."
         ),
         inline=False
     )
